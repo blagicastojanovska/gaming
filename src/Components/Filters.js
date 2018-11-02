@@ -1,5 +1,5 @@
-
 import React, {Component} from 'react';
+import {HashLink as Link} from "react-router-hash-link";
 
 class Filters extends Component {
 	
@@ -55,7 +55,7 @@ class Filters extends Component {
 					</div>
 					<div className="row">
 						<div className="col-md-12 text-right">
-							<h5><a href="#staffpicks">Препорачани од нашиот тим</a></h5>
+							<h5><Link smooth to="#staffpicks">Препорачани од нашиот тим</Link></h5>
 						</div>
 					</div>
 				</div>

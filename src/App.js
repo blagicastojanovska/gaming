@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {HashRouter as Router, Route, Switch} from "react-router-dom"
+import {HashRouter as Router, Route, Switch} from "react-router-dom";
+import {Helmet} from "react-helmet";
 import './App.sass';
 import Gamecards from "./Components/Gamecards.js";
 import Navbar from "./Components/Navbar.js";
@@ -44,6 +45,16 @@ class App extends Component {
      <Router>
      	<Scrolltotop>
      		 <div className="App" style={style}>
+     		 	<Helmet>
+	             	<title>BrainsterBox</title>
+	             	<meta property="og:title" content="BrainsterBox" />
+		            <meta name="og:description" content="Вашата лична кутија со ресурси и алатки за креативна колаборација и
+		             откривање на потенцијалот во твојот тим или организација." />
+		            <meta property="og:image" content="https://toolbox.hyperisland.com/images/fb-og.png" />
+		            <meta property="og:type" content="article" />
+		            <meta name="author" content="Kristijan Bobevski" />
+		            <meta name="og:url" content="https://bobevsky.github.io/gametime" />
+          		 </Helmet>
 		        <Navbar toggleFixed={this.toggleFixed} clearFixed={this.clearFixed} />
 		        <Switch>
 		        	<Route exact path="/" component={Gamecards} />

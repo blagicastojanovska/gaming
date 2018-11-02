@@ -1,7 +1,10 @@
-
 import React, {Component} from 'react';
 import axios from "axios";
 import uuid from "uuid";
+import {SimpleShareButtons} from "react-simple-share";
+import {HashLink as Link} from "react-router-hash-link";
+import ReactDisqusComments from "react-disqus-comments";
+import {Helmet} from "react-helmet";
 
 class Gamepage extends Component {
 	state = {
@@ -39,6 +42,15 @@ class Gamepage extends Component {
 		return (
 			<div className="container">
 				<div className="Gamepage">
+					<Helmet>
+	                    <title>{this.state.games.title}</title>
+	                    <meta property="og:title" content={this.state.games.title} />
+	                    <meta name="og:description" content={this.state.games.description} />
+	                    <meta property="og:image" content={`Images/${this.state.games.image}.png`} />
+	                    <meta property="og:type" content="article" />
+	                    <meta name="author" content="Blagica Stojanovska" />
+	                    <meta name="og:url" content={`http://localhost:3001/games/${this.state.games.image}`} />
+	                </Helmet>
 					<div className="row">
 						<div className="col-md-4 col-sm-4 col-xs-4">
 							<div className="game-img" style={style}>	
@@ -50,7 +62,7 @@ class Gamepage extends Component {
 							<p>{this.state.games.description}</p>
 						</div>
 						<div className="col-md-1 col-md-offset-2 col-sm-1 col-sm-offset-1 hidden-xs text-center">
-							<a href="/"><i className="fa fa-share-alt fa-3x" aria-hidden="true"></i>SHARE</a>
+							<Link smooth to="#socialIcons"><i className="fa fa-share-alt fa-3x" aria-hidden="true"></i>SHARE</Link>
 						</div>
 					</div>
 					<div className="row bg">
@@ -134,6 +146,24 @@ class Gamepage extends Component {
 								// </div>
 								}
 							</div>
+						</div>
+					</div>
+					<div className="row">
+						<div className="col-md-8 col-md-offset-2">
+							<ReactDisqusComments
+								shortname="brainsterbox-gaming"
+								identifier="brainsterbox-gaming.disqus.com"
+								title="Comments"
+								url={window.location.href}
+
+							/>
+						</div>
+					</div>
+					<div className="row" id="socialIcons">
+						<div className="col-md-12">
+							<SimpleShareButtons
+								whitelist={["Facebook", "Twitter", "LinkedIn", "Google+"]} size="40px"
+							/>
 						</div>
 					</div>
 				</div>
