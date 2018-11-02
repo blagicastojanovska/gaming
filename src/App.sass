@@ -1,0 +1,565 @@
+//GAME CARD
+.Card
+	border: 2px solid #c7afd8bf
+	padding: 30px
+	cursor: pointer
+	height: 300px
+	margin-bottom: 30px
+
+	h3
+		margin: 25px 0 5px 0 
+		font-size: 16px
+		color: #585757
+	p
+		text-transform: uppercase
+		font-size: 10.5px
+		font-weight: bold
+		color: #552994
+		margin: 0
+	.image-div
+		background-position: center
+		background-size: contain
+		background-repeat: no-repeat
+		height: 70%
+		width: 100%
+		transition: .3s all linear
+
+
+	&:hover
+		border: 3px solid #552994
+		.hoverDescription
+			opacity: 1
+		.image-div
+			height: 62%
+
+	
+	.hoverDescription
+		margin-top: 10px
+		text-transform: lowercase
+		opacity: 0
+		transition: .3s all linear
+		.m-right
+			margin-right: 15px
+
+// NAVBAR
+.Navbar
+	.container
+		border-bottom: 1px solid #eee 
+	.navbar-flex
+		display: flex
+		justify-content: center
+		align-items: center
+		height: 10vh
+	.navbar-h4
+		display: inline
+		margin: 0
+		font-size: 20px
+	.closed,
+	.hamburger
+		margin-left: 10px
+		font-size: 20px
+		font-weight: bold
+		cursor: pointer
+	.navbar-question
+		color: white
+		background-color: #552994
+		padding: 1px 9px
+		font-weight: bold
+		font-size: 17px
+		margin-right: 5px
+		margin-left: 46px
+		cursor: pointer
+
+// HEADER
+.Header 
+	margin-bottom: 10px
+	color: white
+	.container 
+		background-color: #552994
+		&::after
+		    left: 50%
+		    border: solid transparent
+		    content: " "
+		    height: 0
+		    width: 0
+		    position: absolute
+		    pointer-events: none
+		    border-color: rgba(86, 40, 148, 0)
+		    border-bottom-color: #562894
+		    border-width: 12px
+		    margin-left: 452px
+		    bottom: 89%
+	.m-top-bottom
+		margin-top: 30px
+		margin-bottom: 30px
+	.col-md-3
+		img
+			width: 55%
+		h4
+			font-size: 14px 
+			margin-top: 40px
+			color: #b091c5
+			line-height: 1.3;
+			span
+				color: white
+		hr
+			width: 63%
+		.header-desc
+			width: 63%
+			margin: 0 auto
+		.action-h4
+			margin-top: 30px
+		.energy-h4
+			margin-top: 38px
+
+	.col-md-2
+		img
+			width: 87%
+		h4
+			font-size: 14px 
+			margin-top: 40px
+			color: #b091c5
+			line-height: 1.3;
+			span
+				color: white
+		.header-desc
+			margin: 0 auto
+		.leading-h4
+			margin-top: 27px
+		.team-h4
+			font-size: 13.4px
+	.p-right-0
+		padding-right: 0 !important
+	.p-left-0
+		padding-left: 0 !important
+	.row
+		width: 100%
+	.p-top-bottom
+		padding-bottom: 16px
+	.btn-start
+		background-color: #552994
+		color: white
+		border: 1px solid #b091c5
+		padding: 11px 111px
+		font-size: 22px
+		&:hover
+			text-decoration: none
+			background-color: #9862bd
+			cursor: pointer
+
+// FOOTER
+.Footer 
+	.container-fluid
+		background-color: #552994
+		color: white
+	h2
+		font-weight: normal
+		margin-bottom: 35px
+	.col-md-4:nth-child(1) 
+		p
+			width: 55%
+	.col-md-4:nth-child(2) 
+		p
+			width: 70%
+	ul
+		list-style-type: none
+		padding-left: 0
+		a
+			color: white
+	img
+		width: 3%
+		margin-right: 10px
+	.footer-icon
+		padding-bottom: 25px
+		margin-top: 20px
+
+
+
+.Staffpick
+	margin-bottom: 30px
+	border: 2px solid #eee
+	padding: 25px 25px 20px 25px
+	cursor: pointer
+	transition: .4s all linear
+	&:hover
+		border: 2px solid #552994
+		button
+			text-decoration: none
+			background-color: #552994
+			cursor: pointer
+			color: white
+	img
+		width: 60%
+		text-align: center
+	.staff-image-div
+		text-align: center
+		height: 147.141px
+		background-color: #f8f6f9
+		margin-bottom: 20px
+	h4
+		text-transform: uppercase
+		font-size: 10.5px
+		font-weight: bold
+		letter-spacing: 0.5px
+		color: #552994
+		margin: 0
+		span
+			position: relative
+			top: -2px
+			left: -1.5px
+			font-size: 9px
+			letter-spacing: -1px
+	h3
+		margin: 11px 0 11px 0 
+		font-size: 17px
+		color: #585757
+	p
+		font-size: 13px
+		color: #585757
+	.description-div
+		height: 108px
+		overflow-y: hidden
+		&::after
+           content: ''
+           position: absolute
+           bottom: 102px
+           height: 38px
+           left: 20px
+           right: 20px
+           background: -webkit-linear-gradient(rgba(255,255,255,0.4) 0%, #fff 90%)
+           background: -moz-linear-gradient(rgba(255,255,255,0.4) 0%, #fff 90%)
+           background: -o-linear-gradient(rgba(255,255,255,0.4) 0%, #fff 90%)
+           background: -ms-linear-gradient(rgba(255,255,255,0.4) 0%, #fff 90%)
+           background: linear-gradient(rgba(255,255,255,0.4) 0%, #fff 90%)
+           display: block
+           z-index: 1
+	button
+		background-color: white
+		color: #585757
+		border: 1px solid #eee
+		font-size: 12px
+		padding: 8px 34px
+	.m-top
+		margin-top: 22px
+.Staffpicks
+	margin-top: 15px
+	hr
+		border-top: 2px solid #eee
+	.smallerHr
+	    width: 21%
+	    margin-left: 0
+	    position: absolute
+	    top: 28px
+	    border-top: 3px solid #552994
+
+.Filters
+	margin-top: 20px
+	button
+		background-color: white
+		border: 1px solid #552994
+		color: #552994
+		padding: 8px 0
+		font-size: 11px
+		font-weight: bold
+		&:hover,
+		&:focus
+			background-color: #552994
+			cursor: pointer
+			color: white
+			span
+				color: white
+		span
+			color: #968b8b
+			font-weight: normal
+	.row:nth-child(1)
+		padding: 25px 0
+		background-color: #eee
+		h5
+			margin-top: 0
+			color: #585757 
+		.col-md-4:nth-child(1)
+			padding-right: 0
+		.col-md-4:nth-child(2)
+			padding-left: 3px
+			padding-right: 0
+		.col-md-4:nth-child(3)
+			padding-left: 3px
+		.col-md-6:nth-child(1)
+			padding-right: 0
+		.col-md-6:nth-child(2)
+			padding-left: 3px
+	.row:nth-child(2)
+		h5
+			margin: 30px 0
+			a
+				color:  #585757 
+				text-decoration: none
+
+
+	
+.NavbarMenu 
+	height: 90vh
+	ul
+		list-style-type: none
+		line-height: 3.5
+		li
+			border-bottom: 1px solid #eee
+			font-weight: 500
+			letter-spacing: 0.4px
+			a
+				color: #585757 
+				font-size: 16px
+
+.Gamepage 
+	margin: 30px 0
+	.game-img
+		width: 100%
+		height: 270px
+	h4
+		text-transform: uppercase
+		font-size: 10.5px
+		font-weight: bold
+		letter-spacing: 0.5px
+		color: #552994
+		margin: 0
+		span
+			position: relative
+			top: -2px
+			left: -1.5px
+			font-size: 9px
+			letter-spacing: -1px
+	h2
+		margin-top: 7px
+		margin-bottom: 7px
+		color: #585757
+	p
+		color: #585757
+	.col-md-5
+		margin-top: 30px
+	.col-md-1
+		margin-top: 30px
+		border-left: 1px solid #eee
+		a
+			color: #585757
+			text-decoration: none
+			letter-spacing: 1px
+			font-size: 11
+
+			px
+			&:hover
+				color: #552994
+		i
+			padding-bottom: 10px
+	.row:nth-child(2)
+		background-color: #eee
+		margin-top: 30px
+		padding: 30px 0
+		.row
+		    justify-content: center
+		    align-items: center
+		    display: flex
+		    h5
+		    	margin: 0
+		    	font-size: 13px
+    			font-weight: 650
+    			color: #585757
+		    p
+		    	margin: 0
+		    	font-size: 12px
+		    	color: #585757
+		    .p-left
+		    	padding-left: 45px
+	.row:nth-child(3)
+		margin-top: 30px
+		h3
+			font-size: 20px
+			color: #585757
+			font-weight: 700
+		span
+			color: #585757
+
+.buttonUp
+	background-color: #552994
+	padding: 0px 5px 5px 5px
+	color: white
+	border: 1px solid white
+	span
+		display: block
+		letter-spacing: 1px
+		font-size: 9px
+
+@media screen and (max-width: 1024px)
+	.Navbar
+		.navbar-question
+			margin-left: 12px
+	.Header
+		.container::after
+			margin-left: 353px
+		.row
+			width: 102%
+		.col-md-2 
+			.leading-h4,
+				font-size: 14px
+				margin-top: 8px
+			.team-h4
+				margin-top: 20px
+				font-size: 14px
+		.col-md-3
+			.energy-h4
+				font-size: 14px
+			.action-h4
+				font-size: 14px
+				margin-top: 28px
+		.media-width
+			width: 112%
+	.buttonUp
+		display: none
+	.NavbarMenu
+		ul
+			padding-left: 0
+			margin-top: 20px
+	.Footer
+		h2
+			font-size: 24px
+		.col-md-4:nth-child(1)
+			p
+				width: 90%
+		.col-md-4:nth-child(2)
+			p
+				width: 90%
+	.Staffpick
+		button
+			padding: 10px 24px
+
+
+@media screen and (max-width: 768px)
+	.navbar-question,
+	.buttonUp,
+	.Header
+		display: none
+
+	.Footer 
+		h2
+			font-size: 18px
+			margin-bottom: 23px
+		ul 
+			a
+				font-size: 13px
+		.col-md-4:nth-child(1) 
+			p
+    			font-size: 13px
+    			width: 102%
+		.col-md-4:nth-child(2) 
+			p
+				width: 102%
+				font-size: 13px
+		.row:nth-child(1)
+			margin-top: 10px
+	.Staffpicks
+		.smallerHr
+			top: 19px
+	.Staffpick
+		button
+			padding: 10px 90px
+		&:hover
+			border: 2px solid #eee
+			button
+				background-color: white
+				color: #585757
+		.description-div
+			&::after
+				bottom: 105px
+	.NavbarMenu 
+		ul
+			padding-left: 0
+			margin-top: 20px
+	.Gamepage
+		.game-img
+			margin-top: 20px
+			height: 155px
+		.row:nth-child(2)
+			.row
+				text-align: center
+				display: block
+				p
+					margin-top: 10px
+				h5
+					margin-top: 10px
+				.p-left
+					padding-left: 0
+
+@media screen and (max-width: 425px)
+	.NavbarMenu 
+		ul
+			padding-left: 0
+			margin-top: 20px
+	.Navbar 
+		.closed,
+		.hamburger
+			font-size: 24px
+	.Card
+		padding: 20px
+		height: 242px
+		&:hover
+			border: 2px solid #c7afd8bf
+			.hoverDescription
+				display: none
+			.image-div
+				height: 70%
+		h3
+			font-size: 14px
+	.Staffpicks
+		button
+			font-size: 11px
+			padding: 11px 14px
+	.Staffpick
+		padding: 15px 10px 15px 10px
+		h3
+			15px
+		&:hover
+			border: 2px solid #eee
+			button
+				background-color: white
+				color: #585757
+		.description-div
+			&::after
+				bottom: 99px
+				
+	.Footer
+		.col-md-4:nth-child(1),
+		.col-md-4:nth-child(2)		
+			border-bottom: 1px solid #eeeeee9e
+			p
+				margin-bottom: 22px
+		img
+			width: 6%
+	.Gamepage
+		.row:nth-child(2)
+			.row
+				text-align: center
+				display: block
+				p
+					margin-top: 10px
+				.p-left
+					padding-left: 0
+@media screen and (max-width: 375px)
+	.Staffpick
+		padding: 15px 10px 15px 10px
+		h3
+			15px
+
+@media screen and (max-width: 320px)
+	.Card
+		h3
+			margin-top: 10px
+			font-size: 13px
+		p
+			font-size: 10px
+	.Staffpick
+		padding: 15px 10px 15px 10px
+		h3
+			font-size: 15px
+	.Staffpicks
+		button
+			font-size: 10px
+			padding: 11px 7px
