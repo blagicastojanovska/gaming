@@ -37,7 +37,7 @@ class Staffpicks extends Component {
 					<div className="row">
 						{this.state.games.map(game => {
 							const style = {
-								backgroundImage: `url("/images/${game.image}.png")`,
+								backgroundImage: `url("images/${game.image}.png")`,
 								backgroundPosition: "center",
 								backgroundSize: "contain",
 								backgroundRepeat: "no-repeat"

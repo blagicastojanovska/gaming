@@ -129,7 +129,7 @@ class Gamecards extends Component {
 					<div className="row">
 						{this.state.separateGames.map(game => {
 							const style = {
-								backgroundImage: `url("/images/${game.image}.png")`
+								backgroundImage: `url("images/${game.image}.png")`
 							}
 							return (<Link to={`/Gamepage/${game.id}`} key={game.id}><Card key={game.id} title={game.title} category={game.category}
 							 style={style} time={game.time} players={game.players}/></Link>)

@@ -31,7 +31,7 @@ class Gamepage extends Component {
 
 	render() {
 		const style = {
-			backgroundImage: `url("/images/${this.state.games.image}.png")`,
+			backgroundImage: `url("images/${this.state.games.image}.png")`,
 			backgroundPosition: "center",
 			backgroundSize: "contain",
 			backgroundRepeat: "no-repeat"
@@ -119,18 +119,20 @@ class Gamepage extends Component {
 									 	)
 								 	})}
 								</div>
-								<div className="col-md-4">
-									 {this.state.stepsimg.map ( (stepimg, i) => {
-									 	const style = {
-									 		backgroundImage: `url("${stepimg}.png")`
-									 	}
-									 	return (
-									 		<div key={i} style={style}>
-									 		</div>
-									 	)
-									 })}
+								{
+								// <div className="col-md-4">
+								// 	 {this.state.stepsimg.map ( (stepimg, i) => {
+								// 	 	const style = {
+								// 	 		backgroundImage: `url("${stepimg}.png")`
+								// 	 	}
+								// 	 	return (
+								// 	 		<div key={i} style={style}>
+								// 	 		</div>
+								// 	 	)
+								// 	 })}
 								
-								</div>
+								// </div>
+								}
 							</div>
 						</div>
 					</div>
