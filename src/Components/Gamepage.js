@@ -13,7 +13,7 @@ class Gamepage extends Component {
 		stepsimg: []
 	}
 	async componentDidMount(){
-		let games = await axios.get(`http://localhost:3001/games/${this.props.match.params.id}`);
+		let games = await axios.get(`https://json-brainsterbox.herokuapp.com/posts/${this.props.match.params.id}`);
 		this.setState({
 			games: games.data,
 			steps: games.data.steps,
@@ -23,7 +23,7 @@ class Gamepage extends Component {
 
 	async componentDidUpdate(prevProps){
 		if (this.props.location !== prevProps.location) {
-			let games = await axios.get(`http://localhost:3001/games/${this.props.match.params.id}`);
+			let games = await axios.get(`https://json-brainsterbox.herokuapp.com/posts/${this.props.match.params.id}`);
 			this.setState({
 				games: games.data,
 				steps: games.data.steps,
@@ -49,7 +49,7 @@ class Gamepage extends Component {
 	                    <meta property="og:image" content={`Images/${this.state.games.image}.png`} />
 	                    <meta property="og:type" content="article" />
 	                    <meta name="author" content="Blagica Stojanovska" />
-	                    <meta name="og:url" content={`http://localhost:3001/games/${this.state.games.image}`} />
+	                    <meta name="og:url" content={`https://json-brainsterbox.herokuapp.com/posts/${this.state.games.image}`} />
 	                </Helmet>
 					<div className="row">
 						<div className="col-md-4 col-sm-4 col-xs-4">
