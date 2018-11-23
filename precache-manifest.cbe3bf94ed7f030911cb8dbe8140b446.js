@@ -4,12 +4,12 @@ self.__precacheManifest = [
     "url": "/gaming/static/media/03.09871e20.png"
   },
   {
-    "revision": "e2dc40a15527d975bd59",
-    "url": "/gaming/static/css/main.aef8ef5d.chunk.css"
+    "revision": "4b225b14d56ca45afefb",
+    "url": "/gaming/static/css/main.f09bad36.chunk.css"
   },
   {
-    "revision": "4ff8dcae52a7ef312e46",
-    "url": "/gaming/static/js/1.4ff8dcae.chunk.js"
+    "revision": "7b38ac17f20fbd16d526",
+    "url": "/gaming/static/js/1.7b38ac17.chunk.js"
   },
   {
     "revision": "c9c3d0efef894c8bb6b7",
@@ -24,8 +24,8 @@ self.__precacheManifest = [
     "url": "/gaming/static/media/02.aa1ba4eb.png"
   },
   {
-    "revision": "e2dc40a15527d975bd59",
-    "url": "/gaming/static/js/main.e2dc40a1.chunk.js"
+    "revision": "4b225b14d56ca45afefb",
+    "url": "/gaming/static/js/main.4b225b14.chunk.js"
   },
   {
     "revision": "0b078d6550da23b92e4befd442f8eca9",
@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/gaming/static/media/twitter.9a513524.png"
   },
   {
-    "revision": "43b27f97568b0d7ee25cf5942eb8de52",
+    "revision": "9e0deac9684efe11ad0d0cdb191853b8",
     "url": "/gaming/index.html"
   }
 ];
