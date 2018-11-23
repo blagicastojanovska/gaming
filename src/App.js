@@ -52,8 +52,9 @@ class App extends Component {
 		             откривање на потенцијалот во твојот тим или организација." />
 		            <meta property="og:image" content="https://toolbox.hyperisland.com/images/fb-og.png" />
 		            <meta property="og:type" content="article" />
-		            <meta name="author" content="Kristijan Bobevski" />
-		            <meta name="og:url" content="https://bobevsky.github.io/gametime" />
+		            <meta name="author" content="Blagica Stojanovska" />
+		            <meta name="og:url" content="https://blagicastojanovska.github.io/gaming/" />
+              		<meta name="base_url" content="https://blagicastojanovska.github.io/gaming/" />
           		 </Helmet>
 		        <Navbar toggleFixed={this.toggleFixed} clearFixed={this.clearFixed} />
 		        <Switch>

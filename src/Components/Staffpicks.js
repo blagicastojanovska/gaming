@@ -10,7 +10,7 @@ class Staffpicks extends Component {
 	}
 
 	async componentDidMount(){
-		var games = await axios.get("https://json-brainsterbox.herokuapp.com/posts");
+		var games = await axios.get("https://project3-server.herokuapp.com/posts");
 		this.setState({
 			games: games.data.filter((game) => {
 				return (

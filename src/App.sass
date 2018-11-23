@@ -238,7 +238,8 @@
 		color: #585757
 		border: 1px solid #eee
 		font-size: 12px
-		padding: 8px 34px
+		padding: 8px 0
+		width: 100%
 	.m-top
 		margin-top: 22px
 .Staffpicks
@@ -253,23 +254,6 @@
 
 .Filters
 	margin-top: 20px
-	button
-		background-color: white
-		border: 1px solid #552994
-		color: #552994
-		padding: 8px 0
-		font-size: 11px
-		font-weight: bold
-		&:hover,
-		&:focus
-			background-color: #552994
-			cursor: pointer
-			color: white
-			span
-				color: white
-		span
-			color: #968b8b
-			font-weight: normal
 	.row:nth-child(1)
 		padding: 25px 0
 		background-color: #eee
@@ -293,7 +277,28 @@
 			a
 				color:  #585757 
 				text-decoration: none
-
+	button
+		background-color: white
+		border: 1px solid #562894
+		padding: 9px
+		color: #562894
+		font-size: 12px
+		font-weight: 500
+		transition: all .2s linear
+		span
+			color: #8a7d7db5
+			font-weight: normal
+		@media not all and (pointer: coarse) 
+			&:hover
+				background-color: #562894d4
+				color: white
+				span
+					color: white
+	.active 
+		background-color: #562894
+		color: white
+		span
+			color: white
 
 	
 .NavbarMenu 
@@ -349,7 +354,7 @@
 				color: #552994
 		i
 			padding-bottom: 10px
-	.row:nth-child(2)
+	> .row:nth-child(2)
 		background-color: #eee
 		margin-top: 30px
 		padding: 30px 0
@@ -368,7 +373,7 @@
 		    	color: #585757
 		    .p-left
 		    	padding-left: 45px
-	.row:nth-child(3)
+	> .row:nth-child(3)
 		margin-top: 30px
 		h3
 			font-size: 20px
@@ -376,9 +381,13 @@
 			font-weight: 700
 		span
 			color: #585757
-	.row:nth-child(4)
+	> .row:nth-child(4)
 		margin-top: 30px
 		margin-bottom: 30px
+	.stepimg 
+		width: 66%
+		margin-top: 20px
+
 .buttonUp
 	background-color: #552994
 	padding: 0px 5px 5px 5px
@@ -428,10 +437,15 @@
 		.col-md-4:nth-child(2)
 			p
 				width: 90%
-	.Staffpick
-		button
-			padding: 10px 24px
 
+	.Filters 
+		button
+			font-size: 9.8px
+		.active 
+			background-color: #562894
+			color: white
+			span
+				color: white	
 
 @media screen and (max-width: 768px)
 	.navbar-question,
@@ -461,7 +475,7 @@
 			top: 19px
 	.Staffpick
 		button
-			padding: 10px 90px
+			padding: 10px 0
 		&:hover
 			border: 2px solid #eee
 			button
@@ -488,6 +502,11 @@
 					margin-top: 10px
 				.p-left
 					padding-left: 0
+@media screen and (max-width: 500px)
+	  .Navbar 
+	  	.closed, 
+	  	.hamburger
+	  		margin-left: 25px
 
 @media screen and (max-width: 425px)
 	.NavbarMenu 
@@ -564,3 +583,6 @@
 		button
 			font-size: 10px
 			padding: 11px 7px
+	.Filters 
+		button
+			font-size: 10.5px

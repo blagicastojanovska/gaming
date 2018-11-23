@@ -7,127 +7,257 @@ import {Link} from "react-router-dom"
 class Gamecards extends Component {
 	state = {
 		games: [],
-		separateGames: []
+		separateGames: [],
+		conditions: {
+			category: [],
+			time: [],
+			players: []
+		},
+		allClick: true,
+		EnergijaClick: false,
+		AkciiClick: false,
+		InovaciiClick: false,
+		TimClick: false,
+		LiderstvoClick: false,
+		timeOneClick: false,
+		timeTwoClick: false,
+		timeThreeClick: false,
+		timeFourClick: false,
+		groupOneClick: false,
+		groupTwoClick: false,
+		groupThreeClick: false
 	}
 
 	async componentDidMount(){
-		var games = await axios.get("https://json-brainsterbox.herokuapp.com/posts");
+		var games = await axios.get("https://project3-server.herokuapp.com/posts");
 		this.setState({
 			games: games.data,
 			separateGames: games.data
 		})
 	}
 
-	showEnergy = () => {
-		const energy = (this.state.games.filter(game => game.category === "Енергија"));
-		this.setState({
-			separateGames: energy
-		})
-	} 
-	showAction = () => {
-		const action = (this.state.games.filter(game => game.category === "Акции"));
-		this.setState({
-			separateGames: action
-		})
-	} 
-	showInovation = () => {
-		const inovation = (this.state.games.filter(game => game.category === "Иновации"));
-		this.setState({
-			separateGames: inovation
-		})
-	} 
-	showLeading = () => {
-		const leading = (this.state.games.filter(game => game.category === "Лидерство"));
-		this.setState({
-			separateGames: leading
-		})
-	} 
-	showTeam = () => {
-		const team = (this.state.games.filter(game => game.category === "Тим"));
-		this.setState({
-			separateGames: team
-		})
-	} 
-	showAll = () => {
-		this.setState((prevState) => {
-			return{
-			separateGames: prevState.games
-			 }
-		})
+	//---------------------------------------- FILTERING LOGIC ------------------------------------------------------------------------------------------
+	mainFilter = () => {
+
+		const {conditions, games} = this.state;
+				
+		//---------------------------------------- CATEGORY LOGIC ------------------------------------------------------------------------------------------
+		if (conditions.category.length > 0) {
+			this.setState({
+				separateGames: games.filter(item =>  conditions.category.includes(item.category))
+			})
+
+			if (conditions.players.length > 0) {
+				this.setState({
+					separateGames: games.filter(item => conditions.category.includes(item.category) &&
+														conditions.players.includes(item.players))
+				})
+				// console.log("prv if vo category za players")				
+			}
+
+			if (conditions.time.length > 0) {
+				this.setState({
+					separateGames: games.filter(item => conditions.category.includes(item.category) &&
+														conditions.time.includes(item.time))
+				})
+				// console.log("prv if vo category za time")
+			}
+
+			if (conditions.time.length > 0 && conditions.players.length > 0) {
+				this.setState({
+					separateGames: games.filter(item => conditions.category.includes(item.category) &&
+														conditions.players.includes(item.players) &&
+														conditions.time.includes(item.time))
+					})	
+				// console.log("tret if vo category za dvete")
+			}
+		}
+				
+		//----------------------------------------- TIME LOGIC ------------------------------------------------------------------------------------------------
+		if (conditions.time.length > 0) {
+			this.setState({
+				separateGames: games.filter(item => conditions.time.includes(item.time))
+			})
+			
+			if (conditions.players.length > 0) {
+				this.setState({
+					separateGames: games.filter(item => conditions.time.includes(item.time) &&
+														conditions.players.includes(item.players))
+				})	
+				// console.log("prv if vo time za players")	
+			}
+			if (conditions.category.length > 0) {
+				this.setState({
+					separateGames: games.filter(item => conditions.time.includes(item.time) &&
+														conditions.category.includes(item.category))
+				})	
+				// console.log("prv if vo time za category")
+			}
+
+			if (conditions.category.length > 0 && conditions.players.length > 0) {
+				this.setState({
+					separateGames: games.filter(item => conditions.category.includes(item.category) &&
+														conditions.players.includes(item.players) &&
+														conditions.time.includes(item.time))
+					})	
+				// console.log("tret if vo time za dvete")
+			}	
+												
+		}
+				
+
+		//---------------------------------------- PLAYERS LOGIC --------------------------------------------------------------------------------------------
+		if (conditions.players.length > 0) {
+			this.setState({
+				separateGames: games.filter(item => conditions.players.includes(item.players))
+			})
+
+			if (conditions.time.length > 0) {
+				this.setState({
+						separateGames: games.filter(item => conditions.players.includes(item.players) &&
+															conditions.time.includes(item.time))
+					})	
+				// console.log("prv if vo players za time")
+			} 	
+
+			if (conditions.category.length > 0) {
+				this.setState({
+						separateGames: games.filter(item => conditions.category.includes(item.category) &&
+															conditions.players.includes(item.players))
+					})	
+				// console.log("prv if vo players za category")
+			}	
+
+			if (conditions.category.length > 0 && conditions.time.length > 0) {
+				this.setState({
+						separateGames: games.filter(item => conditions.category.includes(item.category) &&
+															conditions.players.includes(item.players) &&
+															conditions.time.includes(item.time))
+					})	
+				// console.log("tret if vo players za dvete")
+			}			
+		}
+
+		//---------------------------------------- AKO SITE SE PRAZNI ---------------------------------------------------------------------------------------	
+
+		if (conditions.category.length === 0 && conditions.time.length === 0 && conditions.players.length === 0) {
+			this.setState({
+				separateGames: games,
+				allClick: true
+			})
+		}
+
 	}
-	showFirstTimeframe = () => {
-		const FirstTimeframe = (this.state.games.filter(game => game.time === "5-30 минути"));
-		this.setState({
-			separateGames: FirstTimeframe
-		})
+
+	//---------------------------------------- ADD REMOVE CATEGORY FROM STATE LOGIC -------------------------------------------------------------------------
+	addRemoveCategory = (type, value, colored) => {
+		const {EnergijaClick, InovaciiClick, AkciiClick, LiderstvoClick, TimClick, timeOneClick, timeTwoClick, timeThreeClick, timeFourClick,
+			   groupOneClick, groupTwoClick, groupThreeClick} = this.state;
+
+		if (this.state.conditions[type].includes(value)) {
+			var index = this.state.conditions[type].indexOf(value);
+			this.state.conditions[type].splice(index, 1);
+			this.setState({
+				[colored]: false
+			})
+			if (EnergijaClick === true && InovaciiClick === true && AkciiClick === true &&
+				LiderstvoClick === true && TimClick === true && timeOneClick === true &&
+				timeTwoClick === true && timeThreeClick === true && timeFourClick === true &&
+				groupOneClick === true && groupTwoClick === true && groupThreeClick === true) {
+				this.setState({
+					allClick: true
+				})
+			}
+		} else {
+			this.state.conditions[type].push(value);
+			this.setState({
+				[colored]: true
+			})
+			if (EnergijaClick === false && InovaciiClick === false && AkciiClick === false &&
+				LiderstvoClick === false && TimClick === false && timeOneClick === false &&
+				timeTwoClick === false && timeThreeClick === false && timeFourClick === false &&
+				groupOneClick === false && groupTwoClick === false && groupThreeClick === false) {
+				this.setState({
+					allClick: false
+				})
+			}
+		}
+		this.mainFilter();
 	}
-	showSecondTimeframe = () => {
-		const SecondTimeframe = (this.state.games.filter(game => game.time === "30-60 минути"));
-		this.setState({
-			separateGames: SecondTimeframe
-		})
-	}
-	showThirdTimeframe = () => {
-		const ThirdTimeframe = (this.state.games.filter(game => game.time === "60-120 минути"));
-		this.setState({
-			separateGames: ThirdTimeframe
-		})
-	}
-	showFourthTimeframe = () => {
-		const FourthTimeframe  = (this.state.games.filter(game => game.time === "120-240 минути"));
-		this.setState({
-			separateGames: FourthTimeframe 
-		})
-	}
-	showFirstGroup = () => {
-		const FirstGroup = (this.state.games.filter(game => game.players === "2-10"));
-		this.setState({
-			separateGames: FirstGroup 
-		})
-	}
-	showSecondGroup = () => {
-		const SecondGroup = (this.state.games.filter(game => game.players === "10-40"));
-		this.setState({
-			separateGames: SecondGroup 
-		})
-	}
-	showThirdGroup = () => {
-		const ThirdGroup = (this.state.games.filter(game => game.players === "2-40+" || game.players === "10-40+"));
-		this.setState({
-			separateGames: ThirdGroup 
-		})
+	
+	all = () => {
+		this.setState(prevState => {
+			return {
+				separateGames: this.state.games,
+				conditions: {
+					category: [],
+					time: [],
+					players: []
+				},
+				allClick: !prevState.allClick,
+				EnergijaClick: false,
+				AkciiClick: false,
+				InovaciiClick: false,
+				LiderstvoClick: false,
+				TimClick: false,
+				timeOneClick: false,
+				timeTwoClick: false,
+				timeThreeClick: false,
+				timeFourClick: false,
+				groupOneClick: false,
+				groupTwoClick: false,
+				groupThreeClick: false
+			}
+		})	
 	}
 	
 
 
 
 	render() {
+		const {separateGames, games , EnergijaClick, AkciiClick, InovaciiClick, TimClick, LiderstvoClick, timeOneClick, timeTwoClick, timeThreeClick, timeFourClick,
+			   groupOneClick, groupTwoClick, groupThreeClick, allClick} = this.state;
 		return (
 			<div className="Gamecards">
 				<div className="container">
 					<div className="row">
-						<Filters all={this.state.games.length} 
-						energy={this.state.games.filter(game=> game.category === "Енергија").length}
-						action={this.state.games.filter(game=> game.category === "Акции").length}
-						inovation={this.state.games.filter(game=> game.category === "Иновации").length}
-						leading={this.state.games.filter(game=> game.category === "Лидерство").length}
-						team={this.state.games.filter(game=> game.category === "Тим").length}
-						energyClick={this.showEnergy}
-						actionClick={this.showAction}
-						inovationClick={this.showInovation}
-						leadingClick={this.showLeading}
-						teamClick={this.showTeam} 
-						allClick={this.showAll}
-						firstTimeframeClick={this.showFirstTimeframe} 
-						secondTimeframeClick={this.showSecondTimeframe}
-						thirdTimeframeClick={this.showThirdTimeframe}
-						fourthTimeframeClick={this.showFourthTimeframe}
-						firstGroupClick={this.showFirstGroup} 
-						secondGroupClick={this.showSecondGroup} 
-						thirdGroupClick={this.showThirdGroup} />
+						<Filters
+								all = {games.length} 
+								energija = {games.filter(game => game.category === "Енергија").length}
+								energijaClick = {(e) => {this.addRemoveCategory("category", e.target.id, "EnergijaClick")}}
+								energijaColor = {EnergijaClick}
+								akcii = {games.filter(game => game.category === "Акции").length}
+								akciiClick= {(e) => {this.addRemoveCategory("category", e.target.id, "AkciiClick")}}
+								akciiColor = {AkciiClick}
+								inovacii = {games.filter(game => game.category === "Иновации").length}
+								inovaciiClick = {(e) => {this.addRemoveCategory("category", e.target.id, "InovaciiClick")}}
+								inovaciiColor = {InovaciiClick}
+								tim = {games.filter(game => game.category === "Тим").length}
+								timClick = {(e) => {this.addRemoveCategory("category", e.target.id, "TimClick")}}
+								timColor = {TimClick}
+								liderstvo = {games.filter(game => game.category === "Лидерство").length}
+								liderstvoClick = {(e) => {this.addRemoveCategory("category", e.target.id, "LiderstvoClick")}}
+								liderstvoColor = {LiderstvoClick}
+								allClick= {this.all}
+								showAll = {allClick}
+								timeFrameOne= {(e) => {this.addRemoveCategory("time", e.target.id, "timeOneClick")}}
+								timeOneClick = {timeOneClick}
+								timeFrameTwo = {(e) => {this.addRemoveCategory("time", e.target.id, "timeTwoClick")}}
+								timeTwoClick = {timeTwoClick}
+								timeFrameThree = {(e) => {this.addRemoveCategory("time", e.target.id, "timeThreeClick")}}
+								timeThreeClick = {timeThreeClick}
+								timeFrameFour = {(e) => {this.addRemoveCategory("time", e.target.id, "timeFourClick")}}
+								timeFourClick = {timeFourClick}
+								groupOne = {(e) => {this.addRemoveCategory("players", e.target.id, "groupOneClick")}}
+								groupOneClick = {groupOneClick}
+								groupTwo = {(e) => {this.addRemoveCategory("players", e.target.id, "groupTwoClick")}}
+								groupTwoClick = {groupTwoClick}
+								groupThree = {(e) => {this.addRemoveCategory("players", e.target.id || e.target.dataset.players, "groupThreeClick")}}
+								groupThreeClick = {groupThreeClick}
+								/>
 					</div>
 					<div className="row">
-						{this.state.separateGames.map(game => {
+						{separateGames.map(game => {
 							const style = {
 								backgroundImage: `url("images/${game.image}.png")`
 							}

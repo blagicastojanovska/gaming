@@ -9,25 +9,22 @@ import {Helmet} from "react-helmet";
 class Gamepage extends Component {
 	state = {
 		games: [],
-		steps: [],
-		stepsimg: []
+		steps: []
 	}
 	async componentDidMount(){
-		let games = await axios.get(`https://json-brainsterbox.herokuapp.com/posts/${this.props.match.params.id}`);
+		let games = await axios.get(`https://project3-server.herokuapp.com/posts/${this.props.match.params.id}`);
 		this.setState({
 			games: games.data,
-			steps: games.data.steps,
-			stepsimg: games.data.stepsimg
+			steps: games.data.steps
 		})
 	}
 
 	async componentDidUpdate(prevProps){
 		if (this.props.location !== prevProps.location) {
-			let games = await axios.get(`https://json-brainsterbox.herokuapp.com/posts/${this.props.match.params.id}`);
+			let games = await axios.get(`https://project3-server.herokuapp.com/posts/${this.props.match.params.id}`);
 			this.setState({
 				games: games.data,
-				steps: games.data.steps,
-				stepsimg: games.data.stepsimg
+				steps: games.data.steps
 			})
 		} 		
 	}
@@ -49,7 +46,8 @@ class Gamepage extends Component {
 	                    <meta property="og:image" content={`Images/${this.state.games.image}.png`} />
 	                    <meta property="og:type" content="article" />
 	                    <meta name="author" content="Blagica Stojanovska" />
-	                    <meta name="og:url" content={`https://json-brainsterbox.herokuapp.com/posts/${this.state.games.image}`} />
+	                   <meta property="og:url" content={`https://blagicastojanovska.github.io/gaming/#/game/${this.state.games.image}/`} />
+					<meta name="base_url" content={`https://blagicastojanovska.github.io/gaming/#/game/${this.state.games.image}/`} />
 	                </Helmet>
 					<div className="row">
 						<div className="col-md-4 col-sm-4 col-xs-4">
@@ -118,33 +116,29 @@ class Gamepage extends Component {
 					<div className="row">
 						<div className="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
 							<div className="row">
-								<div className="col-md-8">
-									{this.state.steps.map ( (step, i) => {
-										return (
-											<div key={i}>
-												<h3>{step.step}</h3>
-												{step.text.split("\n").map(row => (
-													<span key={uuid()}>{row} <br/><br/></span>
-												))}
-									 			<hr/>
-									 		</div>
-									 	)
-								 	})}
+								<div className="col-md-12">
+									{this.state.steps.map((step,i) => {
+										return(
+											<div key={i} className="row">
+												<div className="col-md-9 col-sm-8">
+													<h3>{step.step}</h3>
+													{step.text.split("\n").map(line => (
+													    <span key={uuid()}>
+													      {line}
+													      <br />
+													      <br />
+													    </span>
+													))}
+												<hr className={step.stepimg !== "" ? "hidden-xs" : ""}/>
+												</div>
+												{step.stepimg !== "" ? <div className="col-md-3 col-sm-4 col-xs-12 text-center">
+													<img src={`Stepsimages/${step.stepimg}.png`} alt="" className="stepimg"/>
+													<hr className="hidden-lg hidden-md hidden-sm"/>
+												</div> : null}
+											</div>
+										)
+									})}
 								</div>
-								{
-								// <div className="col-md-4">
-								// 	 {this.state.stepsimg.map ( (stepimg, i) => {
-								// 	 	const style = {
-								// 	 		backgroundImage: `url("${stepimg}.png")`
-								// 	 	}
-								// 	 	return (
-								// 	 		<div key={i} style={style}>
-								// 	 		</div>
-								// 	 	)
-								// 	 })}
-								
-								// </div>
-								}
 							</div>
 						</div>
 					</div>
