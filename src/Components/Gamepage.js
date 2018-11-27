@@ -68,10 +68,10 @@ class Gamepage extends Component {
 							<div className="row">
 								<div className="col-md-3 col-xs-3">
 									<div className="row">
-										<div className="col-md-2 col-xs-12">
+										<div className="col-md-2 col-sm-2 col-xs-12">
 											<i className="far fa-clock fa-2x"></i>
 										</div>
-										<div className="col-md-10 col-xs-12">
+										<div className="col-md-10 col-sm-9 col-sm-offset-1 col-xs-12">
 											<h5 className="hidden-xs">ВРЕМЕНСКА РАМКА</h5>
 											<p>{this.state.games.time}</p>
 										</div>
@@ -79,10 +79,10 @@ class Gamepage extends Component {
 								</div>
 								<div className="col-md-3 col-xs-3">
 									<div className="row">
-										<div className="col-md-2 col-xs-12">
+										<div className="col-md-2 col-sm-2 col-xs-12">
 											<i className="fa fa-male fa-2x" aria-hidden="true"></i>
 										</div>
-										<div className="col-md-10 col-xs-12">
+										<div className="col-md-10 col-sm-9 col-sm-offset-1 col-xs-12">
 											<h5 className="hidden-xs">ГОЛЕМИНА НА ГРУПА</h5>
 											<p>{this.state.games.players}</p>
 										</div>
@@ -90,10 +90,10 @@ class Gamepage extends Component {
 								</div>
 								<div className="col-md-3 col-xs-3 p-left">
 									<div className="row">
-										<div className="col-md-2 col-xs-12">
+										<div className="col-md-2 col-sm-2 col-xs-12">
 											<i className="fab fa-connectdevelop fa-2x"></i>
 										</div>
-										<div className="col-md-10 col-xs-12">
+										<div className="col-md-10 col-sm-9 col-sm-offset-1 col-xs-12">
 											<h5 className="hidden-xs">ТЕЖИНА</h5>
 											<p>{this.state.games.level}</p>
 										</div>
@@ -101,10 +101,10 @@ class Gamepage extends Component {
 								</div>
 								<div className="col-md-3 col-xs-3">
 									<div className="row">
-										<div className="col-md-2 col-xs-12">
+										<div className="col-md-2 col-sm-2 col-xs-12">
 											<i className="far fa-edit fa-2x"></i>
 										</div>
-										<div className="col-md-10 col-xs-12">
+										<div className="col-md-10 col-sm-9 col-sm-offset-1 col-xs-12">
 											<h5 className="hidden-xs">МАТЕРИЈАЛИ</h5>
 											<p>{this.state.games.materials}</p>
 										</div>
