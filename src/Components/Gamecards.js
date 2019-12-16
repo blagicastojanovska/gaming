@@ -5,28 +5,31 @@ import Filters from './Filters.js';
 import { Link } from 'react-router-dom';
 
 class Gamecards extends Component {
-	state = {
-		games: [],
-		separateGames: [],
-		conditions: {
-			category: [],
-			time: [],
-			players: []
-		},
-		allClick: true,
-		EnergijaClick: false,
-		AkciiClick: false,
-		InovaciiClick: false,
-		TimClick: false,
-		LiderstvoClick: false,
-		timeOneClick: false,
-		timeTwoClick: false,
-		timeThreeClick: false,
-		timeFourClick: false,
-		groupOneClick: false,
-		groupTwoClick: false,
-		groupThreeClick: false
-	};
+	constructor() {
+		super();
+		this.state = {
+			games: [],
+			separateGames: [],
+			conditions: {
+				category: [],
+				time: [],
+				players: []
+			},
+			allClick: true,
+			EnergijaClick: false,
+			AkciiClick: false,
+			InovaciiClick: false,
+			TimClick: false,
+			LiderstvoClick: false,
+			timeOneClick: false,
+			timeTwoClick: false,
+			timeThreeClick: false,
+			timeFourClick: false,
+			groupOneClick: false,
+			groupTwoClick: false,
+			groupThreeClick: false
+		};
+	}
 
 	async componentDidMount() {
 		var games = await axios.get('https://project3-server.herokuapp.com/posts');

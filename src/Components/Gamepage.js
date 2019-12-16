@@ -7,10 +7,14 @@ import ReactDisqusComments from 'react-disqus-comments';
 import { Helmet } from 'react-helmet';
 
 class Gamepage extends Component {
-	state = {
-		games: [],
-		steps: []
-	};
+	constructor() {
+		super();
+		this.state = {
+			games: [],
+			steps: []
+		};
+	}
+
 	async componentDidMount() {
 		let games = await axios.get(
 			`https://project3-server.herokuapp.com/posts/${this.props.match.params.id}`
@@ -34,32 +38,46 @@ class Gamepage extends Component {
 	}
 
 	render() {
-		const style = {
-			backgroundImage: this.state.games.image && `url(${require(`../assets/img/img-cards/${this.state.games.image}.png`)})`,
-			backgroundPosition: 'center',
-			backgroundSize: 'contain',
-			backgroundRepeat: 'no-repeat'
-		};
+		const {
+				title,
+				description,
+				image,
+				category,
+				time,
+				players,
+				level,
+				materials
+			} = this.state.games,
+			{ steps } = this.state,
+			style = {
+				backgroundImage:
+					this.state.games.image &&
+					`url(${require(`../assets/img/img-cards/${this.state.games.image}.png`)})`,
+				backgroundPosition: 'center',
+				backgroundSize: 'contain',
+				backgroundRepeat: 'no-repeat'
+			};
+
 		return (
 			<div className="container">
 				<div className="Gamepage">
 					<Helmet>
-						<title>{this.state.games.title}</title>
-						<meta property="og:title" content={this.state.games.title} />
-						<meta name="og:description" content={this.state.games.description} />
+						<title>{title}</title>
+						<meta property="og:title" content={title} />
+						<meta name="og:description" content={description} />
 						<meta
 							property="og:image"
-							content={this.state.games.image && require(`../assets/img/img-cards/${this.state.games.image}.png`)}
+							content={image && require(`../assets/img/img-cards/${image}.png`)}
 						/>
 						<meta property="og:type" content="article" />
 						<meta name="author" content="Blagica Stojanovska" />
 						<meta
 							property="og:url"
-							content={`https://blagicastojanovska.github.io/gaming/#/game/${this.state.games.image}/`}
+							content={`https://blagicastojanovska.github.io/gaming/#/game/${image}/`}
 						/>
 						<meta
 							name="base_url"
-							content={`https://blagicastojanovska.github.io/gaming/#/game/${this.state.games.image}/`}
+							content={`https://blagicastojanovska.github.io/gaming/#/game/${image}/`}
 						/>
 					</Helmet>
 					<div className="row">
@@ -68,10 +86,10 @@ class Gamepage extends Component {
 						</div>
 						<div className="col-md-5 col-sm-6 col-xs-8">
 							<h4>
-								<span>||||</span> {this.state.games.category}
+								<span>||||</span> {category}
 							</h4>
-							<h2>{this.state.games.title}</h2>
-							<p>{this.state.games.description}</p>
+							<h2>{title}</h2>
+							<p>{description}</p>
 						</div>
 						<div className="col-md-1 col-md-offset-2 col-sm-1 col-sm-offset-1 hidden-xs text-center">
 							<Link smooth to="#socialIcons">
@@ -89,7 +107,7 @@ class Gamepage extends Component {
 										</div>
 										<div className="col-md-10 col-sm-9 col-sm-offset-1 col-xs-12">
 											<h5 className="hidden-xs">ВРЕМЕНСКА РАМКА</h5>
-											<p>{this.state.games.time}</p>
+											<p>{time}</p>
 										</div>
 									</div>
 								</div>
@@ -100,7 +118,7 @@ class Gamepage extends Component {
 										</div>
 										<div className="col-md-10 col-sm-9 col-sm-offset-1 col-xs-12">
 											<h5 className="hidden-xs">ГОЛЕМИНА НА ГРУПА</h5>
-											<p>{this.state.games.players}</p>
+											<p>{players}</p>
 										</div>
 									</div>
 								</div>
@@ -111,7 +129,7 @@ class Gamepage extends Component {
 										</div>
 										<div className="col-md-10 col-sm-9 col-sm-offset-1 col-xs-12">
 											<h5 className="hidden-xs">ТЕЖИНА</h5>
-											<p>{this.state.games.level}</p>
+											<p>{level}</p>
 										</div>
 									</div>
 								</div>
@@ -122,7 +140,7 @@ class Gamepage extends Component {
 										</div>
 										<div className="col-md-10 col-sm-9 col-sm-offset-1 col-xs-12">
 											<h5 className="hidden-xs">МАТЕРИЈАЛИ</h5>
-											<p>{this.state.games.materials}</p>
+											<p>{materials}</p>
 										</div>
 									</div>
 								</div>
@@ -133,7 +151,7 @@ class Gamepage extends Component {
 						<div className="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1">
 							<div className="row">
 								<div className="col-md-12">
-									{this.state.steps.map((step, i) => {
+									{steps.map((step, i) => {
 										return (
 											<div key={i} className="row">
 												<div className="col-md-9 col-sm-8">

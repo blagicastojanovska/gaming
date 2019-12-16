@@ -4,25 +4,29 @@ import Staffpick from './Staffpick.js';
 import { Link } from 'react-router-dom';
 
 class Staffpicks extends Component {
-	state = {
-		games: []
-	};
+	constructor() {
+		super();
+		this.state = {
+			games: []
+		};
+	}
 
 	async componentDidMount() {
 		var games = await axios.get('https://project3-server.herokuapp.com/posts');
 		this.setState({
-			games: games.data.filter(game => {
-				return (
+			games: games.data.filter(
+				game =>
 					games.data[2].id === game.id ||
 					games.data[13].id === game.id ||
 					games.data[20].id === game.id ||
 					games.data[41].id === game.id
-				);
-			})
+			)
 		});
 	}
 
 	render() {
+		const { games } = this.state;
+		
 		return (
 			<div className="Staffpicks" id="staffpicks">
 				<div className="container">
@@ -34,7 +38,7 @@ class Staffpicks extends Component {
 						</div>
 					</div>
 					<div className="row">
-						{this.state.games.map(game => {
+						{games.map(game => {
 							const style = {
 								backgroundImage: `url(${require(`../assets/img/img-cards/${game.image}.png`)})`,
 								backgroundPosition: 'center',

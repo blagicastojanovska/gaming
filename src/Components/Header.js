@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Header = props => {
+const Header = ({ toggleHeader }) => {
   return (
     <div className="Header">
       <div className="container">
@@ -17,7 +17,10 @@ const Header = props => {
           <div className="col-md-12">
             <div className="row">
               <div className="col-md-3 text-center">
-                <img src={require('../assets/img/img-header/01.png')} alt="header-img" />
+                <img
+                  src={require('../assets/img/img-header/01.png')}
+                  alt="header-img"
+                />
                 <h4 className="energy-h4">
                   РАЗДВИЖИ ГО ПРОСТОРОТ СО <span>ENERGIZERS</span>
                 </h4>
@@ -28,7 +31,10 @@ const Header = props => {
                 </p>
               </div>
               <div className="col-md-2 text-center">
-                <img src={require('../assets/img/img-header/02.png')} alt="header-img" />
+                <img
+                  src={require('../assets/img/img-header/02.png')}
+                  alt="header-img"
+                />
                 <h4>
                   ОТКЛУЧИ <br />
                   <span>ИНОВАЦИИ</span>
@@ -40,7 +46,10 @@ const Header = props => {
                 </p>
               </div>
               <div className="col-md-2 text-center p-right-0">
-                <img src={require('../assets/img/img-header/03.png')} alt="header-img" />
+                <img
+                  src={require('../assets/img/img-header/03.png')}
+                  alt="header-img"
+                />
                 <h4 className="leading-h4">
                   РАЗВИЈ ПЕРСОНАЛНО
                   <br />
@@ -53,7 +62,10 @@ const Header = props => {
                 </p>
               </div>
               <div className="col-md-3 text-center p-left-0">
-                <img src={require('../assets/img/img-header/04.png')} alt="header-img" />
+                <img
+                  src={require('../assets/img/img-header/04.png')}
+                  alt="header-img"
+                />
                 <h4 className="action-h4">
                   НАПРАВИ ПРОМЕНА ПРЕКУ <br />
                   <span>АКЦИЈА</span>
@@ -65,7 +77,10 @@ const Header = props => {
                 </p>
               </div>
               <div className="col-md-2 text-center">
-                <img src={require('../assets/img/img-header/05.png')} alt="header-img" />
+                <img
+                  src={require('../assets/img/img-header/05.png')}
+                  alt="header-img"
+                />
                 <h4 className="team-h4">
                   ИЗГРАДИ НЕПОБЕДЛИВ <span>ТИМ</span>
                 </h4>
@@ -80,7 +95,7 @@ const Header = props => {
         </div>
         <div className="row p-top-bottom">
           <div className="col-md-12 text-center">
-            <button className="btn-start" onClick={props.toggleHeader}>
+            <button className="btn-start" onClick={toggleHeader}>
               Започни
             </button>
           </div>

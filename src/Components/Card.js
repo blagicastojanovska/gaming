@@ -1,18 +1,18 @@
 import React from 'react';
 
-const Card = props => {
+const Card = ({ style, title, category, time, players }) => {
   return (
     <div className="col-md-3 col-sm-6 col-xs-6 text-center">
       <div className="Card">
-        <div className="image-div" style={props.style}></div>
-        <h3>{props.title}</h3>
-        <p>{props.category}</p>
+        <div className="image-div" style={style}></div>
+        <h3>{title}</h3>
+        <p>{category}</p>
         <p className="hoverDescription">
           <span className="m-right">
-            <i className="far fa-clock"></i> {props.time}
+            <i className="far fa-clock"></i> {time}
           </span>
           <span>
-            <i className="fas fa-male"></i> {props.players}
+            <i className="fas fa-male"></i> {players}
           </span>
         </p>
       </div>
