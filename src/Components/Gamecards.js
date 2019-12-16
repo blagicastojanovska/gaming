@@ -362,7 +362,7 @@ class Gamecards extends Component {
 					<div className="row">
 						{separateGames.map(game => {
 							const style = {
-								backgroundImage: `url("images/${game.image}.png")`
+								backgroundImage: `url(${require(`../assets/img/img-cards/${game.image}.png`)})`
 							};
 							return (
 								<Link to={`/Gamepage/${game.id}`} key={game.id}>

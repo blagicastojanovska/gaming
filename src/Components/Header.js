@@ -1,9 +1,4 @@
 import React from 'react';
-import EnergyImg from '../Headerimages/01.png';
-import InovationImg from '../Headerimages/02.png';
-import LeadingImg from '../Headerimages/03.png';
-import ActionImg from '../Headerimages/04.png';
-import TeamImg from '../Headerimages/05.png';
 
 const Header = props => {
   return (
@@ -22,7 +17,7 @@ const Header = props => {
           <div className="col-md-12">
             <div className="row">
               <div className="col-md-3 text-center">
-                <img src={EnergyImg} alt="header-img" />
+                <img src={require('../assets/img/img-header/01.png')} alt="header-img" />
                 <h4 className="energy-h4">
                   РАЗДВИЖИ ГО ПРОСТОРОТ СО <span>ENERGIZERS</span>
                 </h4>
@@ -33,7 +28,7 @@ const Header = props => {
                 </p>
               </div>
               <div className="col-md-2 text-center">
-                <img src={InovationImg} alt="header-img" />
+                <img src={require('../assets/img/img-header/02.png')} alt="header-img" />
                 <h4>
                   ОТКЛУЧИ <br />
                   <span>ИНОВАЦИИ</span>
@@ -45,7 +40,7 @@ const Header = props => {
                 </p>
               </div>
               <div className="col-md-2 text-center p-right-0">
-                <img src={LeadingImg} alt="header-img" />
+                <img src={require('../assets/img/img-header/03.png')} alt="header-img" />
                 <h4 className="leading-h4">
                   РАЗВИЈ ПЕРСОНАЛНО
                   <br />
@@ -58,7 +53,7 @@ const Header = props => {
                 </p>
               </div>
               <div className="col-md-3 text-center p-left-0">
-                <img src={ActionImg} alt="header-img" />
+                <img src={require('../assets/img/img-header/04.png')} alt="header-img" />
                 <h4 className="action-h4">
                   НАПРАВИ ПРОМЕНА ПРЕКУ <br />
                   <span>АКЦИЈА</span>
@@ -70,7 +65,7 @@ const Header = props => {
                 </p>
               </div>
               <div className="col-md-2 text-center">
-                <img src={TeamImg} alt="header-img" />
+                <img src={require('../assets/img/img-header/05.png')} alt="header-img" />
                 <h4 className="team-h4">
                   ИЗГРАДИ НЕПОБЕДЛИВ <span>ТИМ</span>
                 </h4>

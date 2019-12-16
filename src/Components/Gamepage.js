@@ -35,7 +35,7 @@ class Gamepage extends Component {
 
 	render() {
 		const style = {
-			backgroundImage: `url("images/${this.state.games.image}.png")`,
+			backgroundImage: this.state.games.image && `url(${require(`../assets/img/img-cards/${this.state.games.image}.png`)})`,
 			backgroundPosition: 'center',
 			backgroundSize: 'contain',
 			backgroundRepeat: 'no-repeat'
@@ -49,7 +49,7 @@ class Gamepage extends Component {
 						<meta name="og:description" content={this.state.games.description} />
 						<meta
 							property="og:image"
-							content={`Images/${this.state.games.image}.png`}
+							content={this.state.games.image && require(`../assets/img/img-cards/${this.state.games.image}.png`)}
 						/>
 						<meta property="og:type" content="article" />
 						<meta name="author" content="Blagica Stojanovska" />
@@ -147,16 +147,16 @@ class Gamepage extends Component {
 													))}
 													<hr className={step.stepimg !== '' ? 'hidden-xs' : ''} />
 												</div>
-												{step.stepimg !== '' ? (
+												{step.stepimg !== '' && (
 													<div className="col-md-3 col-sm-4 col-xs-12 text-center">
 														<img
-															src={`Stepsimages/${step.stepimg}.png`}
+															src={require(`../assets/img/img-steps/${step.stepimg}.png`)}
 															alt=""
 															className="stepimg"
 														/>
 														<hr className="hidden-lg hidden-md hidden-sm" />
 													</div>
-												) : null}
+												)}
 											</div>
 										);
 									})}

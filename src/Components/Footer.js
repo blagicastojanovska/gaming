@@ -1,8 +1,4 @@
 import React from 'react';
-import Facebookimg from '../Footerimages/facebook.png';
-import Instagramimg from '../Footerimages/instagram.png';
-import Linkedinimg from '../Footerimages/linkedin.png';
-import Twitterimg from '../Footerimages/twitter.png';
 
 const Footer = props => {
   return (
@@ -86,28 +82,28 @@ const Footer = props => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={Facebookimg} alt="Facebook-img" />
+              <img src={require('../assets/img/img-social-icons/facebook.png')} alt="Facebook-img" />
             </a>
             <a
               href="https://www.instagram.com/brainsterco/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={Instagramimg} alt="Instagram-img" />
+              <img src={require('../assets/img/img-social-icons/instagram.png')} alt="Instagram-img" />
             </a>
             <a
               href="https://www.linkedin.com/company/brainster-co"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={Linkedinimg} alt="Linkedin-img" />
+              <img src={require('../assets/img/img-social-icons/linkedin.png')} alt="Linkedin-img" />
             </a>
             <a
               href="https://www.twitter.com/brainsterco"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={Twitterimg} alt="Twitter-img" />
+              <img src={require('../assets/img/img-social-icons/twitter.png')} alt="Twitter-img" />
             </a>
           </div>
         </div>

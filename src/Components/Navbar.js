@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Logo from '../Logo.png';
 import Header from './Header.js';
 import NavbarMenu from './NavbarMenu.js';
 import { Link } from 'react-router-dom';
@@ -44,7 +43,7 @@ class Navbar extends Component {
 					<div className="row navbar-flex">
 						<div className="col-md-2 col-sm-3 col-xs-5">
 							<Link to="/">
-								<img src={Logo} alt="Logo-img" className="img img-responsive" />
+								<img src={require('../assets/img/Logo.png')} alt="Logo-img" className="img img-responsive" />
 							</Link>
 						</div>
 						<div className="col-md-2 col-md-offset-8 col-sm-2 col-sm-offset-7 col-xs-2 col-xs-offset-5">
