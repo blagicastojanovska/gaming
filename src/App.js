@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import {HashRouter as Router, Route, Switch} from "react-router-dom";
 import {Helmet} from "react-helmet";
-import './App.sass';
-import Gamecards from "./Components/Gamecards.js";
-import Navbar from "./Components/Navbar.js";
-import Footer from "./Components/Footer.js";
-import Staffpicks from "./Components/Staffpicks.js";
-import Gamepage from "./Components/Gamepage.js";
-import Scrolltotop from "./Components/Scrolltotop.js";
+import './assets/styles/App.sass';
+import Gamecards from "./components/Gamecards.js";
+import Navbar from "./components/Navbar.js";
+import Footer from "./components/Footer.js";
+import Staffpicks from "./components/Staffpicks.js";
+import Gamepage from "./components/Gamepage.js";
+import Scrolltotop from "./components/Scrolltotop.js";
 import ScrollUp from "react-scroll-up";
 
 class App extends Component {
