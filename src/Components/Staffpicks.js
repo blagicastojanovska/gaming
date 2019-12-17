@@ -4,16 +4,16 @@ import Staffpick from './Staffpick.js';
 import { Link } from 'react-router-dom';
 
 const Staffpicks = props => {
-	const [games, setGames] = useState([]);
+	const [staffPicks, setStaffPicks] = useState([]);
 
 	useEffect(() => {
-		fetchData();
+		getStaffPicks();
 	}, []);
 
-	const fetchData = async () => {
+	const getStaffPicks = async () => {
 		const result = await axios('https://project3-server.herokuapp.com/posts');
 
-		setGames(
+		setStaffPicks(
 			result.data.filter(
 				game =>
 					result.data[2].id === game.id ||
@@ -35,8 +35,8 @@ const Staffpicks = props => {
 					</div>
 				</div>
 				<div className="row">
-					{games.map(game => (
-						<Link to={`/Gamepage/${game.id}`} key={game.id}>
+					{staffPicks.map(game => (
+						<Link to={`/Gamepage/${game.id}`} replace key={game.id}>
 							<Staffpick
 								key={game.id}
 								title={game.title}
