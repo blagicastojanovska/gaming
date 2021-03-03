@@ -1,0 +1,49 @@
+// Font settings
+$font-family-base: 'Inter', sans-serif;
+
+$line-height-medium:  1.68;
+$line-height-base:    1.5;
+$line-height-small:   1.25;
+$line-height-tiny:    1.12;
+$line-height-nulled:  1;
+
+$font-weight-light:  300;
+$font-weight-base:   400;
+$font-weight-bold:   700;
+
+// Size settings
+$max-width-base:      83.333vw; // 1200px
+$gutter-base:         rem-calc(30);
+
+$border-radius-base:  rem-calc(5);
+$border-width-base:   rem-calc(1);
+
+// Z-index settings
+$zindex-menu:         1337;
+$zindex-scale:        10;
+$zindex-modal-bg:     (($zindex-menu) + ($zindex-scale));
+$zindex-modal:        (($zindex-modal-bg) + ($zindex-scale));
+
+// Color settings
+$base-color:       #585757; //darkgrey
+$primary-color:    #FFF; // white
+$secondary-color:  #552994; // purple
+$tertiary-color:   #eee; // lightgrey
+
+$text-color-base:       $base-color; //darkgrey
+$text-color-medium:     transparentize($text-color-base, .75);
+$text-color-primary:    $primary-color; //white
+$text-color-secondary:  $secondary-color; //purple
+$text-color-tertiary:   #b091c5; //lightpurple
+
+$background-color-base:       $primary-color; //white
+$background-color-primary:    $base-color; // darkgrey
+$background-color-secondary:  $secondary-color; // purple
+$background-color-tertiary:   $tertiary-color;  // lightgrey
+
+$border-color-base:        $secondary-color; //purple
+$border-color-primary:     $tertiary-color; //lightgrey
+$border-color-secondary: #c7afd8bf; //lightpurple
+
+$primary-hover-color:   lighten($secondary-color, 10%); //purple light
+$secondary-hover-color: darken($secondary-color, 5%); //purple dark

@@ -1,0 +1,7 @@
+.Gamecards {
+  @include section;
+
+  .inner-wrap {
+    @include wrap;
+  }
+}
