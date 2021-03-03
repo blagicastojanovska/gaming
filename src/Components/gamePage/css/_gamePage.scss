@@ -65,6 +65,17 @@
 
       span {
         display: block;
+
+        &[class^='icon-']:before,
+        &[class*=' icon-']:before {
+          @media (max-width: 599px) {
+            font-size: ($gutter-base);
+          }
+
+          @media (min-width: 600px) {
+            font-size: ($gutter-base * 1.5);
+          }
+        }
       }
 
       @media (min-width: 700px) {
@@ -124,6 +135,11 @@
         transform: translateY(-50%);
         width: ($gutter-base * 1.333);
         text-align: center;
+
+        [class^='icon-']:before,
+        [class*=' icon-']:before {
+          font-size: ($gutter-base);
+        }
       }
 
       .content-box {

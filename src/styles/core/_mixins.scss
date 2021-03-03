@@ -37,6 +37,16 @@
     padding-top: ($gutter-base * 2);
   }
 
+  &.state-colored {
+    @media (max-width: 999px) {
+      padding-bottom: ($gutter-base);
+    }
+
+    @media (min-width: 1000px) {
+      padding-bottom: ($gutter-base * 2);
+    }
+  }
+
   &+.footer {
     @media (max-width: 999px) {
       margin-top: ($gutter-base);
