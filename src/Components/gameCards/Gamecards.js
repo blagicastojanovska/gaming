@@ -172,7 +172,7 @@ const Gamecards = () => {
               );
             })
           ) : (
-            <p class="no-results">Нема пронајдени резултати.</p>
+            <p className="no-results">Нема пронајдени резултати.</p>
           )}
         </div>
       </div>
