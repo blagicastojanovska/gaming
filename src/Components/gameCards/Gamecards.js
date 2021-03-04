@@ -150,7 +150,13 @@ const Gamecards = () => {
           setFiltersVisibility={setFiltersVisibility}
         />
         <div className="grid-container" ref={results}>
-          {gamesData.length ? (
+          {!gamesData.length ? (
+            <img
+              src={require("../../assets/img/filters_loader.gif")}
+              className="loader"
+              alt="loader"
+            />
+          ) : gamesToRender.length ? (
             gamesToRender.map((game) => {
               return (
                 <Card
@@ -165,7 +171,7 @@ const Gamecards = () => {
               );
             })
           ) : (
-            <img src={require("../../assets/img/filters_loader.gif")} className="loader" alt="loader"/>
+            <p class="no-results">Нема пронајдени резултати.</p>
           )}
         </div>
       </div>
