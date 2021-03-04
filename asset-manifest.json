@@ -1,7 +1,7 @@
 {
-  "main.css": "/gaming/static/css/main.549c40f6.chunk.css",
-  "main.js": "/gaming/static/js/main.197e78b4.chunk.js",
-  "main.js.map": "/gaming/static/js/main.197e78b4.chunk.js.map",
+  "main.css": "/gaming/static/css/main.c8dc19b5.chunk.css",
+  "main.js": "/gaming/static/js/main.10c82b23.chunk.js",
+  "main.js.map": "/gaming/static/js/main.10c82b23.chunk.js.map",
   "static/js/1.e6e8fa18.chunk.js": "/gaming/static/js/1.e6e8fa18.chunk.js",
   "static/js/1.e6e8fa18.chunk.js.map": "/gaming/static/js/1.e6e8fa18.chunk.js.map",
   "runtime~main.js": "/gaming/static/js/runtime~main.c9c3d0ef.js",
@@ -56,8 +56,8 @@
   "static/media/03.png": "/gaming/static/media/03.09871e20.png",
   "static/media/04.png": "/gaming/static/media/04.0b078d65.png",
   "static/media/05.png": "/gaming/static/media/05.59de13bf.png",
-  "static/css/main.549c40f6.chunk.css.map": "/gaming/static/css/main.549c40f6.chunk.css.map",
+  "static/css/main.c8dc19b5.chunk.css.map": "/gaming/static/css/main.c8dc19b5.chunk.css.map",
   "index.html": "/gaming/index.html",
-  "precache-manifest.d43d4ff037fb6ec7deb7172cf1f9b69d.js": "/gaming/precache-manifest.d43d4ff037fb6ec7deb7172cf1f9b69d.js",
+  "precache-manifest.edc3b2e0d1161733b25b7b5cc9879202.js": "/gaming/precache-manifest.edc3b2e0d1161733b25b7b5cc9879202.js",
   "service-worker.js": "/gaming/service-worker.js"
 }

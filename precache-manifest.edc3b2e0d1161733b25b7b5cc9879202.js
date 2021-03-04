@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "197e78b434b576fa2b81",
-    "url": "/gaming/static/css/main.549c40f6.chunk.css"
+    "revision": "10c82b230aa8eb06cb9c",
+    "url": "/gaming/static/css/main.c8dc19b5.chunk.css"
   },
   {
-    "revision": "197e78b434b576fa2b81",
-    "url": "/gaming/static/js/main.197e78b4.chunk.js"
+    "revision": "10c82b230aa8eb06cb9c",
+    "url": "/gaming/static/js/main.10c82b23.chunk.js"
   },
   {
     "revision": "e6e8fa18c2117e04a82f",
@@ -20,16 +20,16 @@ self.__precacheManifest = [
     "url": "/gaming/static/media/filters_loader.2339b0f7.gif"
   },
   {
-    "revision": "af0f0094a34adb94af5b4c0fc7e36f9b",
-    "url": "/gaming/static/media/icomoon.af0f0094.woff"
+    "revision": "6579008aba3652a19c91c0dc50eff5f1",
+    "url": "/gaming/static/media/icomoon.6579008a.eot"
   },
   {
     "revision": "80ace9fe40cd3e76740cde9e6be46ac1",
     "url": "/gaming/static/media/icomoon.80ace9fe.ttf"
   },
   {
-    "revision": "6579008aba3652a19c91c0dc50eff5f1",
-    "url": "/gaming/static/media/icomoon.6579008a.eot"
+    "revision": "af0f0094a34adb94af5b4c0fc7e36f9b",
+    "url": "/gaming/static/media/icomoon.af0f0094.woff"
   },
   {
     "revision": "e561f3f47d2cd06f8586a6505db5f01d",
@@ -264,7 +264,7 @@ self.__precacheManifest = [
     "url": "/gaming/static/media/9.843ab43a.png"
   },
   {
-    "revision": "ec1d1d36ec4f8952a09f497d9efa8dcb",
+    "revision": "876a4fe0709cdf6f1c690723aad78109",
     "url": "/gaming/index.html"
   }
 ];
