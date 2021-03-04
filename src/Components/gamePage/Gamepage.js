@@ -3,24 +3,25 @@ import axios from "axios";
 import { HashLink as Link } from "react-router-hash-link";
 import ReactDisqusComments from "react-disqus-comments";
 import { Helmet } from "react-helmet";
+import { API_URL, PROJECT_URL } from '../../config';
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from "react-share";
 
 const Gamepage = ({ location, match }) => {
   const [game, setGame] = useState([]);
 
   useEffect(() => {
+    const getGameDetail = async () => {
+      const { data } = await axios(`${API_URL}/${match.params.id}`);
+
+      setGame(data);
+    };
+
     getGameDetail();
   }, [location]);
 
-  const getGameDetail = async () => {
-    const game = await axios(`https://project3-server.herokuapp.com/posts/${match.params.id}`);
-
-    setGame(game.data);
-  };
-
   const { title, description, image, category, time, players, level, materials, steps } = game;
 
-  const url = `https://blagicastojanovska.github.io/gaming/#/game/${image}`;
+  const url = `${PROJECT_URL}/#/game/${image}`;
 
   return (
     <div className="Gamepage">

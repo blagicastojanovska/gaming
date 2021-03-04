@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import { API_URL } from "../../config";
 import Card from "../card";
 import Filters from "../filters";
 
@@ -48,7 +49,7 @@ const Gamecards = () => {
   //set the initial games
   useEffect(() => {
     const getGames = async () => {
-      const { data } = await axios("https://project3-server.herokuapp.com/posts");
+      const { data } = await axios(API_URL);
 
       setGamesData(data);
       setGamesToRender(data);
