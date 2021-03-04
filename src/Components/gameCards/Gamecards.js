@@ -43,7 +43,6 @@ const Gamecards = () => {
         top: results.current.offsetTop - 30 - 67.85,
         behavior: "smooth",
       });
-
   }, [areFiltersVisible]);
 
   //set the initial games
@@ -151,19 +150,23 @@ const Gamecards = () => {
           setFiltersVisibility={setFiltersVisibility}
         />
         <div className="grid-container" ref={results}>
-          {gamesToRender.map((game) => {
-            return (
-              <Card
-                key={game.id}
-                title={game.title}
-                category={game.category}
-                time={game.time}
-                players={game.players}
-                id={game.id}
-                img={require(`../../assets/img/img-cards/${game.image}.png`)}
-              />
-            );
-          })}
+          {gamesData.length ? (
+            gamesToRender.map((game) => {
+              return (
+                <Card
+                  key={game.id}
+                  title={game.title}
+                  category={game.category}
+                  time={game.time}
+                  players={game.players}
+                  id={game.id}
+                  img={require(`../../assets/img/img-cards/${game.image}.png`)}
+                />
+              );
+            })
+          ) : (
+            <img src={require("../../assets/img/filters_loader.gif")} className="loader" alt="loader"/>
+          )}
         </div>
       </div>
     </div>
