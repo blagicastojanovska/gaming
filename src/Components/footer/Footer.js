@@ -57,23 +57,28 @@ const Footer = () => (
           </ul>
         </div>
       </div>
-      <div className="secondary-segment">
-        <a href="https://www.facebook.com/brainster.co/" target="_blank" rel="noopener noreferrer">
-          <img src={require("../../assets/img/img-social-icons/facebook.png")} alt="facebook-link" />
-        </a>
-        <a href="https://www.instagram.com/brainsterco/" target="_blank" rel="noopener noreferrer">
-          <img src={require("../../assets/img/img-social-icons/instagram.png")} alt="instagram-link" />
-        </a>
+      <div className="socialIcons">
+        <a
+          href="https://www.facebook.com/brainster.co/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="follow on fadebook"
+          className="icon-facebook social-icon"
+        />
         <a
           href="https://www.linkedin.com/company/brainster-co"
           target="_blank"
           rel="noopener noreferrer"
-        >
-          <img src={require("../../assets/img/img-social-icons/linkedin.png")} alt="linkedin-link" />
-        </a>
-        <a href="https://twitter.com/brainsterco" target="_blank" rel="noopener noreferrer">
-          <img src={require("../../assets/img/img-social-icons/twitter.png")} alt="twitter-link" />
-        </a>
+          aria-label="follow on linkedin"
+          className="icon-linkedin social-icon"
+        />
+        <a
+          href="https://twitter.com/brainsterco"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="follow on twitter"
+          className="icon-twitter social-icon"
+        />
       </div>
     </div>
   </footer>

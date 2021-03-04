@@ -76,19 +76,13 @@
     }
   }
 
-  .secondary-segment a {
+  .socialIcons .social-icon {
     display: inline-block;
+    text-align: center;
+    background-color: $primary-hover-color !important;
 
     &:hover {
-      text-decoration: underline;
-    }
-
-    &:not(:last-child) {
-      margin-right: ($gutter-base / 2);
-    }
-
-    img {
-      width: rem-calc(30);
+      background-color: $secondary-hover-color !important;
     }
   }
 }
