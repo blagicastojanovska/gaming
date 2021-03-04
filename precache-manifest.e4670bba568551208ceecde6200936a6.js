@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "10c82b230aa8eb06cb9c",
-    "url": "/gaming/static/css/main.c8dc19b5.chunk.css"
+    "revision": "9a019fe68ebc9930ffb5",
+    "url": "/gaming/static/css/main.8da08588.chunk.css"
   },
   {
-    "revision": "10c82b230aa8eb06cb9c",
-    "url": "/gaming/static/js/main.10c82b23.chunk.js"
+    "revision": "9a019fe68ebc9930ffb5",
+    "url": "/gaming/static/js/main.9a019fe6.chunk.js"
   },
   {
-    "revision": "e6e8fa18c2117e04a82f",
-    "url": "/gaming/static/js/1.e6e8fa18.chunk.js"
+    "revision": "93fc155059939db23962",
+    "url": "/gaming/static/js/1.93fc1550.chunk.js"
   },
   {
     "revision": "c9c3d0efef894c8bb6b7",
@@ -264,7 +264,7 @@ self.__precacheManifest = [
     "url": "/gaming/static/media/9.843ab43a.png"
   },
   {
-    "revision": "876a4fe0709cdf6f1c690723aad78109",
+    "revision": "89a817f3cbc042b99a974bf599935789",
     "url": "/gaming/index.html"
   }
 ];

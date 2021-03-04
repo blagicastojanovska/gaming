@@ -1,9 +1,9 @@
 {
-  "main.css": "/gaming/static/css/main.c8dc19b5.chunk.css",
-  "main.js": "/gaming/static/js/main.10c82b23.chunk.js",
-  "main.js.map": "/gaming/static/js/main.10c82b23.chunk.js.map",
-  "static/js/1.e6e8fa18.chunk.js": "/gaming/static/js/1.e6e8fa18.chunk.js",
-  "static/js/1.e6e8fa18.chunk.js.map": "/gaming/static/js/1.e6e8fa18.chunk.js.map",
+  "main.css": "/gaming/static/css/main.8da08588.chunk.css",
+  "main.js": "/gaming/static/js/main.9a019fe6.chunk.js",
+  "main.js.map": "/gaming/static/js/main.9a019fe6.chunk.js.map",
+  "static/js/1.93fc1550.chunk.js": "/gaming/static/js/1.93fc1550.chunk.js",
+  "static/js/1.93fc1550.chunk.js.map": "/gaming/static/js/1.93fc1550.chunk.js.map",
   "runtime~main.js": "/gaming/static/js/runtime~main.c9c3d0ef.js",
   "runtime~main.js.map": "/gaming/static/js/runtime~main.c9c3d0ef.js.map",
   "static/media/filters_loader.gif": "/gaming/static/media/filters_loader.2339b0f7.gif",
@@ -56,8 +56,8 @@
   "static/media/03.png": "/gaming/static/media/03.09871e20.png",
   "static/media/04.png": "/gaming/static/media/04.0b078d65.png",
   "static/media/05.png": "/gaming/static/media/05.59de13bf.png",
-  "static/css/main.c8dc19b5.chunk.css.map": "/gaming/static/css/main.c8dc19b5.chunk.css.map",
+  "static/css/main.8da08588.chunk.css.map": "/gaming/static/css/main.8da08588.chunk.css.map",
   "index.html": "/gaming/index.html",
-  "precache-manifest.edc3b2e0d1161733b25b7b5cc9879202.js": "/gaming/precache-manifest.edc3b2e0d1161733b25b7b5cc9879202.js",
+  "precache-manifest.e4670bba568551208ceecde6200936a6.js": "/gaming/precache-manifest.e4670bba568551208ceecde6200936a6.js",
   "service-worker.js": "/gaming/service-worker.js"
 }
