@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useState } from "react";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import "./styles/global.scss";
 import Gamecards from "./components/gameCards";
 import Navbar from "./components/navbar";
@@ -8,7 +8,7 @@ import Staffpicks from "./components/staffpicks";
 import Gamepage from "./components/gamePage";
 import Scrolltotop from "./components/scrollToTop";
 import TriggerScrollTop from "./components/triggerScrollTop";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+import { CSSTransition } from "react-transition-group";
 
 const App = () => {
   const [isBtnVisible, setBtnVisibility] = useState(false);
@@ -37,16 +37,16 @@ const App = () => {
       <Scrolltotop>
         <Navbar />
         {routes.map(({ path, Component }) => (
-            <Route key={path} exact path={path}>
-              {({ match }) => (
-                <CSSTransition in={match != null} timeout={300} classNames="page" unmountOnExit>
-                  <div className="page">
-                    <Component {...match} />
-                  </div>
-                </CSSTransition>
-              )}
-            </Route>
-          ))}
+          <Route key={path} exact path={path}>
+            {({ match }) => (
+              <CSSTransition in={match != null} timeout={300} classNames="page" unmountOnExit>
+                <div className="page">
+                  <Component {...match} />
+                </div>
+              </CSSTransition>
+            )}
+          </Route>
+        ))}
         <Staffpicks />
         <Footer />
         <CSSTransition in={isBtnVisible} timeout={300} classNames="state" unmountOnExit>

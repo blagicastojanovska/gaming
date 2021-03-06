@@ -64,21 +64,21 @@ const Footer = () => (
           rel="noopener noreferrer"
           aria-label="follow on fadebook"
           className="icon-facebook social-icon"
-        />
+        > </a>
         <a
           href="https://www.linkedin.com/company/brainster-co"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="follow on linkedin"
           className="icon-linkedin social-icon"
-        />
+        > </a>
         <a
           href="https://twitter.com/brainsterco"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="follow on twitter"
           className="icon-twitter social-icon"
-        />
+        > </a>
       </div>
     </div>
   </footer>
