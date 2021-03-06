@@ -9,12 +9,6 @@
   padding-bottom: ($gutter-base / 3);
   border-bottom: $border-width-base solid $background-color-tertiary;
 
-  &.state-scrolled {
-    .trigger-header {
-      @include fadeOutDown(.3s);
-    }
-  }
-
   .inner-wrap {
     @include wrap;
     position: relative;
@@ -36,7 +30,7 @@
   }
 
   .trigger-header {
-    @include fadeInUp(.3s);
+    @include slideUpDown;
     position: relative;
     display: block;
     width: ($gutter-base);
@@ -55,16 +49,17 @@
       outline: none;
     }
 
-    &.state-active:after {
+    &:after {
       content: '';
       position: absolute;
       left: 50%;
-      transform: translateX(-50%);
+      transform: translate3d(-50%, 100%, 0);
       height: 0;
       width: 0;
       border-left: ($gutter-base / 3) solid transparent;
       border-right: ($gutter-base / 3) solid transparent;
       border-bottom: ($gutter-base / 3) solid $background-color-secondary;
+      opacity: 0;
 
       @media (max-width: 999px) {
         top: calc(100% + #{($gutter-base / 3)} + #{($gutter-base)});
@@ -73,6 +68,12 @@
       @media (min-width: 1000px) {
         top: calc(100% + #{($gutter-base / 3)} + #{($gutter-base * 2)});
       }
+    }
+
+    &.state-active:after {
+      opacity: 1;
+      transform: translate3d(-50%, 0, 0);;
+      transition: opacity .3s .15s, transform .3s .15s;
     }
   }
 
@@ -144,18 +145,25 @@
       transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19);
     }
 
+    &:before {
+      content: '';
+      position: absolute;
+      top: calc(100% + #{($gutter-base / 2)});
+      right: rem-calc(4.5);
+      height: 0;
+      width: 0;
+      border-left: ($gutter-base / 3) solid transparent;
+      border-right: ($gutter-base / 3) solid transparent;
+      border-bottom: ($gutter-base / 3) solid $background-color-secondary;
+      opacity: 0;
+      transform: translate3d(0, 100%, 0);
+    }
+
     &.state-active {
       &:before {
-        @include fadeIn(.3s);
-        content: '';
-        position: absolute;
-        top: calc(100% + #{($gutter-base / 2)});
-        right: rem-calc(4.5);
-        height: 0;
-        width: 0;
-        border-left: ($gutter-base / 3) solid transparent;
-        border-right: ($gutter-base / 3) solid transparent;
-        border-bottom: ($gutter-base / 3) solid $background-color-secondary;
+        opacity: 1;
+        transform: translate3d(0, 0, 0);;
+        transition: opacity .3s .15s, transform .3s .15s;
       }
 
       .hamburger-inner {
@@ -186,20 +194,15 @@
   }
 
   #menu-main {
-    display: none;
+    @include fadeInOut;
+    position: absolute;
+    z-index: $zindex-menu;
+    top: calc(100% + #{($gutter-base / 3)});
+    right: 0;
+    background-color: $background-color-secondary;
 
-    &.state-active {
-      @include fadeIn(.3s);
-      display: block;
-      position: absolute;
-      z-index: $zindex-menu;
-      top: calc(100% + #{($gutter-base / 3)});
-      right: 0;
-      background-color: $background-color-secondary;
-
-      @media (min-width: 1000px) {
-        right: ($gutter-base / 2);
-      }
+    @media (min-width: 1000px) {
+      right: ($gutter-base / 2);
     }
 
     ul {

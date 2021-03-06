@@ -1,7 +1,7 @@
 import React from "react";
 
-const Header = ({ toggleHeader, isHeaderOpen }) => (
-  <div className={isHeaderOpen ? 'Header state-active' : 'Header'}>
+const Header = ({ toggleHeader }) => (
+  <div className="Header">
     <div className="inner-wrap">
       <div className="content-box">
         <div className="main-titles">

@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { CSSTransition } from "react-transition-group";
 import Header from "../header";
 import NavbarMenu from "./NavbarMenu";
 
@@ -10,19 +11,21 @@ const Navbar = () => {
 
   const header = useRef();
 
-  useLayoutEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > header.current.offsetHeight) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
+  const handleScroll = () => {
+    if (window.scrollY > header.current.offsetHeight) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  useEffect(() => {
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
 
     return () => window.removeEventListener("scroll", handleScroll);
-  });
+  }, []);
 
   const toggleHeader = () => {
     setHeaderOpen(!isHeaderOpen);
@@ -53,19 +56,21 @@ const Navbar = () => {
 
   return (
     <>
-      <header id="top" className={isScrolled ? "state-scrolled" : ""} ref={header}>
+      <header id="top" ref={header}>
         <div className="inner-wrap">
           <div className="primary-segment">
             <Link to="/" className="logo">
               <img src={require("../../assets/img/logo.png")} alt="Logo" />
             </Link>
-            <button
-              type="button"
-              className={isHeaderOpen ? "trigger-header state-active" : "trigger-header"}
-              onClick={toggleHeader}
-            >
-              ?
-            </button>
+            <CSSTransition in={!isScrolled} timeout={300} classNames="state" unmountOnExit>
+              <button
+                type="button"
+                className={isHeaderOpen ? "trigger-header state-active" : "trigger-header"}
+                onClick={toggleHeader}
+              >
+                ?
+              </button>
+            </CSSTransition>
             <button
               type="button"
               aria-controls="menu-main"
@@ -84,10 +89,14 @@ const Navbar = () => {
               </span>
             </button>
           </div>
-          <NavbarMenu isMenuOpen={isMenuOpen} />
+          <CSSTransition in={isMenuOpen} timeout={300} classNames="state" unmountOnExit>
+            <NavbarMenu />
+          </CSSTransition>
         </div>
       </header>
-      <Header isHeaderOpen={isHeaderOpen} toggleHeader={toggleHeader} />
+      <CSSTransition in={isHeaderOpen} timeout={300} classNames="state" unmountOnExit>
+        <Header toggleHeader={toggleHeader} />
+      </CSSTransition>
     </>
   );
 };

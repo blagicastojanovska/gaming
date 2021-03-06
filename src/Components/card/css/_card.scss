@@ -1,10 +1,10 @@
 .Card {
 	&.grid-item {
 		@media (min-width: 1000px) and (max-width: 1249px) {
-      &:nth-child(n + 4) {
-        margin-top: ($gutter-base);
-      }
-    }
+			&:nth-child(n + 4) {
+				margin-top: ($gutter-base);
+			}
+		}
 	}
 
 	.item-inner {

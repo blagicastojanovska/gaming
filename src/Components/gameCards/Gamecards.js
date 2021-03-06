@@ -158,19 +158,17 @@ const Gamecards = () => {
               alt="loader"
             />
           ) : gamesToRender.length ? (
-            gamesToRender.map((game) => {
-              return (
-                <Card
-                  key={game.id}
-                  title={game.title}
-                  category={game.category}
-                  time={game.time}
-                  players={game.players}
-                  id={game.id}
-                  img={require(`../../assets/img/img-cards/${game.image}.png`)}
-                />
-              );
-            })
+            gamesToRender.map((game) => (
+              <Card
+                key={`game-${game.id}`}
+                title={game.title}
+                category={game.category}
+                time={game.time}
+                players={game.players}
+                id={game.id}
+                img={require(`../../assets/img/img-cards/${game.image}.png`)}
+              />
+            ))
           ) : (
             <p className="no-results">Нема пронајдени резултати.</p>
           )}

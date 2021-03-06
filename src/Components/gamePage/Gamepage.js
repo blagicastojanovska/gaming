@@ -3,25 +3,28 @@ import axios from "axios";
 import { HashLink as Link } from "react-router-hash-link";
 import ReactDisqusComments from "react-disqus-comments";
 import { Helmet } from "react-helmet";
-import { API_URL, PROJECT_URL } from '../../config';
+import { API_URL, PROJECT_URL } from "../../config";
 import { FacebookShareButton, LinkedinShareButton, TwitterShareButton } from "react-share";
 
-const Gamepage = ({ location, match }) => {
+const Gamepage = (props) => {
+  console.log(props);
   const [game, setGame] = useState([]);
 
   useEffect(() => {
-    const getGameDetail = async () => {
-      const { data } = await axios(`${API_URL}/${match.params.id}`);
+    if (props.params) {
+      const getGameDetail = async () => {
+        const { data } = await axios(`${API_URL}/${props.params.id}`);
 
-      setGame(data);
-    };
+        setGame(data);
+      };
 
-    getGameDetail();
-  }, [location]);
+      getGameDetail();
+    }
+  }, [props]);
 
   const { title, description, image, category, time, players, level, materials, steps } = game;
 
-  const url = `${PROJECT_URL}/#/game/${image}`;
+  const currentURL = `${PROJECT_URL}/#/game/${image}`;
 
   return (
     <div className="Gamepage">
@@ -36,8 +39,8 @@ const Gamepage = ({ location, match }) => {
           />
           <meta property="og:type" content="article" />
           <meta name="author" content="Blagica Stojanovska" />
-          <meta property="og:url" content={url} />
-          <meta name="base_url" content={url} />
+          <meta property="og:url" content={currentURL} />
+          <meta name="base_url" content={currentURL} />
         </Helmet>
         {game ? (
           <>
@@ -128,19 +131,23 @@ const Gamepage = ({ location, match }) => {
             </div>
             <div id="socialIcons" className="socialIcons">
               <p className="label">Сподели:</p>
-              <FacebookShareButton url={url} quote={title} className="social-icon">
+              <FacebookShareButton url={currentURL} quote={title} className="social-icon">
                 <span className="icon-facebook"></span>
               </FacebookShareButton>
-              <LinkedinShareButton url={url} className="social-icon">
+              <LinkedinShareButton url={currentURL} className="social-icon">
                 <span className="icon-linkedin"></span>
               </LinkedinShareButton>
-              <TwitterShareButton url={url} title={title} className="social-icon">
+              <TwitterShareButton url={currentURL} title={title} className="social-icon">
                 <span className="icon-twitter"></span>
               </TwitterShareButton>
             </div>
           </>
         ) : (
-          <img src={require("../../assets/img/filters_loader.gif")} className="loader" alt="loader"/>
+          <img
+            src={require("../../assets/img/filters_loader.gif")}
+            className="loader"
+            alt="loader"
+          />
         )}
       </div>
     </div>

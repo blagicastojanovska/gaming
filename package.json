@@ -14,7 +14,8 @@
     "react-router-dom": "^5.1.2",
     "react-router-hash-link": "^1.2.0",
     "react-scripts": "2.0.5",
-    "react-share": "^4.4.0"
+    "react-share": "^4.4.0",
+    "react-transition-group": "^4.4.1"
   },
   "scripts": {
     "deploy": "npm run build&&gh-pages -d build",

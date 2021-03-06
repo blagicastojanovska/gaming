@@ -1,12 +1,7 @@
 .Header {
   @include section;
+  @include fadeInOut;
   color: $text-color-primary;
-  display: none;
-
-  &.state-active {
-    @include fadeIn(.3s);
-    display: block;
-  }
 
   .inner-wrap {
     @include wrap;

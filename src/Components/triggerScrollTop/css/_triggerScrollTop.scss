@@ -1,4 +1,5 @@
 .trigger-scrollTop {
+  @include slideUpDown;
   position: fixed;
   bottom: ($gutter-base * 2);
   right: ($gutter-base / 2);
@@ -12,12 +13,6 @@
   cursor: pointer;
   transition-duration: 0.3s;
   transition-timing-function: ease-in;
-  display: none;
-
-  &.state-active {
-    @include fadeIn(.3s);
-    display: block;
-  }
 
   &:focus {
     outline: none;
